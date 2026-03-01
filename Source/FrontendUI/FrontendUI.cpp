@@ -1,4 +1,4 @@
 #include "FrontendUI.h"
 #include "Modules/ModuleManager.h"
 
-IMPLEMENT_PRIMARY_GAME_MODULE( FDefaultGameModuleImpl, FrontendUI, "FrontendUI" );
+IMPLEMENT_PRIMARY_GAME_MODULE(FDefaultGameModuleImpl, FrontendUI, "FrontendUI");

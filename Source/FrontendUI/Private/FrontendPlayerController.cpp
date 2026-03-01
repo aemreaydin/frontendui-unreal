@@ -2,14 +2,16 @@
 #include "Camera/CameraActor.h"
 #include "Kismet/GameplayStatics.h"
 
-void AFrontendPlayerController::OnPossess(APawn *Pawn) {
-  Super::OnPossess(Pawn);
+void AFrontendPlayerController::OnPossess(APawn* PossessedPawn)
+{
+	Super::OnPossess(PossessedPawn);
 
-  TArray<AActor *> Cameras;
-  UGameplayStatics::GetAllActorsOfClassWithTag(
-      this, ACameraActor::StaticClass(), FName("Default"), Cameras);
+	TArray<AActor*> Cameras;
+	UGameplayStatics::GetAllActorsOfClassWithTag(
+		this, ACameraActor::StaticClass(), FName("Default"), Cameras);
 
-  if (!Cameras.IsEmpty()) {
-    SetViewTarget(Cameras[0]);
-  }
+	if (!Cameras.IsEmpty())
+	{
+		SetViewTarget(Cameras[0]);
+	}
 }
