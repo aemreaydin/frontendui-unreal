@@ -1,6 +1,6 @@
 ﻿#include "FrontendUISubsystem.h"
 #include "Engine/AssetManager.h"
-#include "FrontendUI/Widget/FrontendPrimaryLayoutWidget.h"
+#include "FrontendUI/Public/Widget/FrontendPrimaryLayoutWidget.h"
 #include "Widget/FrontendActivatableWidget.h"
 #include "Widgets/CommonActivatableWidgetContainer.h"
 

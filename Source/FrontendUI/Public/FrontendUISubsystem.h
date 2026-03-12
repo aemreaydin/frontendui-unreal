@@ -4,6 +4,7 @@
 #include "Subsystems/GameInstanceSubsystem.h"
 #include "FrontendUISubsystem.generated.h"
 
+class UFrontendCommonButtonBase;
 struct FGameplayTag;
 class UFrontendActivatableWidget;
 class UFrontendPrimaryLayoutWidget;
@@ -13,6 +14,9 @@ enum class EAsyncPushWidgetState : uint8
 	OnCreateBeforePush,
 	AfterPush
 };
+
+DECLARE_DYNAMIC_MULTICAST_DELEGATE_TwoParams(FOnButtonHoveredUpdateDescription, UFrontendCommonButtonBase*, Button,
+                                             FText, DescriptionText);
 
 using FPushCallbackType = const TFunction<void(
 	EAsyncPushWidgetState, UFrontendActivatableWidget*)>;
@@ -37,4 +41,8 @@ public:
 private:
 	UPROPERTY(Transient)
 	TObjectPtr<UFrontendPrimaryLayoutWidget> PrimaryLayoutWidget;
+
+public:
+	UPROPERTY(BlueprintAssignable)
+	FOnButtonHoveredUpdateDescription OnButtonHoveredUpdateDescription;
 };
