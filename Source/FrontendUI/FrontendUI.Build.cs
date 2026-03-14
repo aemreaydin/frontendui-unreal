@@ -10,9 +10,9 @@ public class FrontendUI : ModuleRules
 
 		PublicDependencyModuleNames.AddRange([
 			"Core", "CoreUObject", "Engine", "InputCore", "EnhancedInput", "GameplayTags", "UMG", "CommonUI",
-			"CommonUIEditor", "DeveloperSettings"
+			"CommonUIEditor", "DeveloperSettings", "CommonInput"
 		]);
 
 		PrivateDependencyModuleNames.AddRange([]);
-}
+	}
 }

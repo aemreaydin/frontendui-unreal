@@ -1,6 +1,7 @@
 ﻿#pragma once
 
 #include "CoreMinimal.h"
+#include "FrontendEnumTypes.h"
 #include "Subsystems/GameInstanceSubsystem.h"
 #include "FrontendUISubsystem.generated.h"
 
@@ -37,6 +38,10 @@ public:
 	                             TSoftClassPtr<UFrontendActivatableWidget> LayoutWidgetClass,
 	                             const TFunction<void(EAsyncPushWidgetState, UFrontendActivatableWidget*)>&
 	                             PushCallback) const;
+
+	void Async_PushConfirmationScreenToModalStack(EConfirmationScreenType ConfirmationType, const FText& Title,
+	                                         const FText& Message,
+	                                         TFunction<void(EConfirmationScreenButtonType)> OnClickedCallback) const;
 
 private:
 	UPROPERTY(Transient)
