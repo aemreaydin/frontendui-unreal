@@ -91,7 +91,7 @@ void UFrontendUISubsystem::Async_PushConfirmationScreenToModalStack(const EConfi
 	default: ;
 	}
 	check(ConfirmationScreenInfo);
-	
+
 	ConfirmationScreenInfo->ConfirmationTitle = Title;
 	ConfirmationScreenInfo->ConfirmationMessage = Message;
 

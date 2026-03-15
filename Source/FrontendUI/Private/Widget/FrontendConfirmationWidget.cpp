@@ -84,9 +84,6 @@ void UFrontendConfirmationWidget::InitConfirmScreen(const UConfirmationScreenInf
 		FDataTableRowHandle RowHandle;
 		switch (ButtonType)
 		{
-		case EConfirmationScreenButtonType::Confirm:
-			RowHandle = ICommonInputModule::GetSettings().GetDefaultClickAction();
-			break;
 		case EConfirmationScreenButtonType::Cancel:
 			RowHandle = ICommonInputModule::GetSettings().GetDefaultBackAction();
 			break;
@@ -100,7 +97,7 @@ void UFrontendConfirmationWidget::InitConfirmScreen(const UConfirmationScreenInf
 
 		auto* Button = ConfirmButtonBox->CreateEntry<UFrontendCommonButtonBase>();
 		Button->SetButtonText(ButtonText);
-		Button->SetTriggeredInputAction(RowHandle);
+		Button->SetTriggeringInputAction(RowHandle);
 		Button->OnClicked().AddLambda([this, InClickedCallback, ButtonType]()
 		{
 			InClickedCallback(ButtonType);

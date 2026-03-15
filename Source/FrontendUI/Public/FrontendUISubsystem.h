@@ -40,8 +40,9 @@ public:
 	                             PushCallback) const;
 
 	void Async_PushConfirmationScreenToModalStack(EConfirmationScreenType ConfirmationType, const FText& Title,
-	                                         const FText& Message,
-	                                         TFunction<void(EConfirmationScreenButtonType)> OnClickedCallback) const;
+	                                              const FText& Message,
+	                                              TFunction<void(EConfirmationScreenButtonType)> OnClickedCallback)
+	const;
 
 private:
 	UPROPERTY(Transient)
